@@ -7,15 +7,8 @@ export function Footer() {
           {/* Left Side - Logo and Navigation */}
           <div className="lg:col-span-6 space-y-8">
             <div className="flex items-center gap-3 group">
-              <div className="relative w-9 h-9 flex items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br from-slate-900 to-slate-800 shadow-lg group-hover:shadow-pink-500/20 transition-all duration-300">
-                <span className="text-white font-bold text-lg relative z-10">
-                  S
-                </span>
-                <div className="absolute inset-0 bg-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 mix-blend-overlay" />
-              </div>
-              <span className="text-xl font-bold tracking-tight">
-                Shenovate
-              </span>
+              <img src="/shenovate png_1.png" alt="Shenovate Logo" className="w-9 h-9 object-contain" />
+             
             </div>
 
             <nav className="flex flex-row gap-1 flex-wrap">
