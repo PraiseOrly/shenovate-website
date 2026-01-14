@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { Button } from './ui/Button';
+import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
-import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import { Button } from './ui/Button';
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -48,12 +48,7 @@ export function Header() {
           `} layout>
           {/* Logo */}
           <a href="#" className="flex items-center gap-3 group">
-            <div className="relative w-9 h-9 flex items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br from-slate-900 to-slate-800 shadow-lg group-hover:shadow-pink-500/20 transition-all duration-300">
-              <span className="text-white font-bold text-lg relative z-10">
-                S
-              </span>
-              <div className="absolute inset-0 bg-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 mix-blend-overlay" />
-            </div>
+            <img src="/shenovate png_1.png" alt="Shenovate Logo" className="w-9 h-9 object-contain" />
             <span className={`text-xl font-bold tracking-tight ${isScrolled ? 'text-slate-900' : 'text-slate-900'}`}>
               Shenovate
             </span>
