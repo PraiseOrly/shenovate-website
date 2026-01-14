@@ -54,9 +54,6 @@ export function Footer() {
                 <Input placeholder="Enter your email" className="bg-gray-100 border-gray-300 focus:ring-pink-500" />
                 <Button type="submit">Subscribe</Button>
               </form>
-              <p className="text-xs text-gray-500">
-                This is a hint text to help user.
-              </p>
             </div>
           </div>
         </div>
