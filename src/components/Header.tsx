@@ -44,21 +44,19 @@ export function Header() {
     }}>
         <motion.div className={`
             relative flex items-center justify-between px-6 md:px-8 transition-all duration-500
-            ${isScrolled ? 'w-[95%] md:w-auto md:min-w-[800px] bg-white/80 backdrop-blur-xl shadow-lg shadow-slate-200/20 rounded-full py-3 border border-white/20' : 'w-full bg-transparent py-6'}
+${isScrolled ? 'w-[45%] md:w-full md:max-w-[1260px] bg-white/90 backdrop-blur-xl py-2 rounded-lg' : 'w-full bg-transparent py-4'}
           `} layout>
           {/* Logo */}
           <a href="#" className="flex items-center gap-3 group">
-            <img src="/shenovate png_1.png" alt="Shenovate Logo" className="w-9 h-9 object-contain" />
-            <span className={`text-xl font-bold tracking-tight ${isScrolled ? 'text-slate-900' : 'text-slate-900'}`}>
-              Shenovate
-            </span>
+<img src="/shenovate png_1.png" alt="Shenovate Logo" className="w-16 h-16 object-contain" />
+            
           </a>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-1">
-            {navLinks.map(link => <a key={link.name} href={link.href} className="relative px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors group overflow-hidden rounded-full">
+{navLinks.map(link => <a key={link.name} href={link.href} className="relative px-4 py-2 text-[16px] font-[700] text-slate-600 hover:text-slate-900 transition-colors group overflow-hidden font-['Instrument_Sans']" style={{ fontStyle: 'normal', lineHeight: '100%', letterSpacing: '-6%' }}>
                 <span className="relative z-10">{link.name}</span>
-                <motion.div className="absolute inset-0 bg-slate-100 opacity-0 group-hover:opacity-100 rounded-full -z-0" layoutId="navbar-hover" transition={{
+                <motion.div className="absolute inset-0 bg-slate-100 opacity-0 group-hover:opacity-100 -z-0" layoutId="navbar-hover" transition={{
               duration: 0.2
             }} />
               </a>)}

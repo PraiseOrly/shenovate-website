@@ -7,34 +7,34 @@ export function Footer() {
           {/* Left Side - Logo and Navigation */}
           <div className="lg:col-span-6 space-y-8">
             <div className="flex items-center gap-3 group">
-              <img src="/shenovate png_1.png" alt="Shenovate Logo" className="w-9 h-9 object-contain" />
+              <img src="/shenovate png_1.png" alt="Shenovate Logo" className="w-12 h-12 object-contain" />
              
             </div>
 
-            <nav className="flex flex-row gap-1 flex-wrap">
-              <a href="#" className="relative px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors group overflow-hidden rounded-full w-fit">
+<nav className="flex flex-row gap-1 flex-wrap">
+              <a href="#" className="relative px-4 py-2 text-[16px] font-[700] text-slate-600 hover:text-slate-900 transition-colors group overflow-hidden w-fit font-['Instrument_Sans']" style={{ fontStyle: 'normal', lineHeight: '100%', letterSpacing: '-6%' }}>
                 <span className="relative z-10">Home</span>
-                <div className="absolute inset-0 bg-slate-100 opacity-0 group-hover:opacity-100 rounded-full -z-0" />
+                <div className="absolute inset-0 bg-slate-100 opacity-0 group-hover:opacity-100 -z-0" />
               </a>
-              <a href="#about" className="relative px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors group overflow-hidden rounded-full w-fit">
+              <a href="#about" className="relative px-4 py-2 text-[16px] font-[700] text-slate-600 hover:text-slate-900 transition-colors group overflow-hidden w-fit font-['Instrument_Sans']" style={{ fontStyle: 'normal', lineHeight: '100%', letterSpacing: '-6%' }}>
                 <span className="relative z-10">About Us</span>
-                <div className="absolute inset-0 bg-slate-100 opacity-0 group-hover:opacity-100 rounded-full -z-0" />
+                <div className="absolute inset-0 bg-slate-100 opacity-0 group-hover:opacity-100 -z-0" />
               </a>
-              <a href="#projects" className="relative px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors group overflow-hidden rounded-full w-fit">
+              <a href="#projects" className="relative px-4 py-2 text-[16px] font-[700] text-slate-600 hover:text-slate-900 transition-colors group overflow-hidden w-fit font-['Instrument_Sans']" style={{ fontStyle: 'normal', lineHeight: '100%', letterSpacing: '-6%' }}>
                 <span className="relative z-10">Project</span>
-                <div className="absolute inset-0 bg-slate-100 opacity-0 group-hover:opacity-100 rounded-full -z-0" />
+                <div className="absolute inset-0 bg-slate-100 opacity-0 group-hover:opacity-100 -z-0" />
               </a>
-              <a href="#contact" className="relative px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors group overflow-hidden rounded-full w-fit">
+              <a href="#contact" className="relative px-4 py-2 text-[16px] font-[700] text-slate-600 hover:text-slate-900 transition-colors group overflow-hidden w-fit font-['Instrument_Sans']" style={{ fontStyle: 'normal', lineHeight: '100%', letterSpacing: '-6%' }}>
                 <span className="relative z-10">Contact</span>
-                <div className="absolute inset-0 bg-slate-100 opacity-0 group-hover:opacity-100 rounded-full -z-0" />
+                <div className="absolute inset-0 bg-slate-100 opacity-0 group-hover:opacity-100 -z-0" />
               </a>
-              <a href="#" className="relative px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors group overflow-hidden rounded-full w-fit">
+              <a href="#" className="relative px-4 py-2 text-[16px] font-[700] text-slate-600 hover:text-slate-900 transition-colors group overflow-hidden w-fit font-['Instrument_Sans']" style={{ fontStyle: 'normal', lineHeight: '100%', letterSpacing: '-6%' }}>
                 <span className="relative z-10">Help</span>
-                <div className="absolute inset-0 bg-slate-100 opacity-0 group-hover:opacity-100 rounded-full -z-0" />
+                <div className="absolute inset-0 bg-slate-100 opacity-0 group-hover:opacity-100 -z-0" />
               </a>
-              <a href="#" className="relative px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors group overflow-hidden rounded-full w-fit">
+              <a href="#" className="relative px-4 py-2 text-[16px] font-[700] text-slate-600 hover:text-slate-900 transition-colors group overflow-hidden w-fit font-['Instrument_Sans']" style={{ fontStyle: 'normal', lineHeight: '100%', letterSpacing: '-6%' }}>
                 <span className="relative z-10">Privacy</span>
-                <div className="absolute inset-0 bg-slate-100 opacity-0 group-hover:opacity-100 rounded-full -z-0" />
+                <div className="absolute inset-0 bg-slate-100 opacity-0 group-hover:opacity-100 -z-0" />
               </a>
             </nav>
           </div>
