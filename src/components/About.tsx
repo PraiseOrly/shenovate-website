@@ -1,6 +1,5 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Rocket, Sparkles, Users } from 'lucide-react';
+import { Rocket } from 'lucide-react';
 export function About() {
   const features = [{
     icon: Rocket,
@@ -8,12 +7,12 @@ export function About() {
     subtitle: 'Rocketing Girls to STEM Stardom!',
     description: "We're on a wild ride to close the gender gap in tech, empowering girls and women in Nigeria with the coolest STEM skills, confidence, and support to shine bright and soar high in coding, robotics, and beyond!"
   }, {
-    icon: Sparkles,
+    icon: Rocket,
     title: 'Our Vision',
     subtitle: 'Dreaming Big for Every Girl!',
     description: "Imagine a world where girls and women have all the tools, chances, and cheerleaders they need to rule STEM. We're making that happen and turning them into the bold leaders, inventors, and game-changers of tomorrow!"
   }, {
-    icon: Users,
+    icon: Rocket,
     title: 'Why We Do This',
     subtitle: 'Because Diversity Fuels Awesome Tech!',
     description: "Innovation gets a mega boost when everyone's at the table. We're creating a vibe where girls and women can learn, grow, and lead; making tech more inclusive, exciting, and totally unstoppable!"

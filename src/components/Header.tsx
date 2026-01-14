@@ -65,7 +65,7 @@ ${isScrolled ? 'w-[45%] md:w-full md:max-w-[1260px] bg-white/90 backdrop-blur-xl
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-4">
             <Button size="sm" variant="primary" className={isScrolled ? 'shadow-none' : 'shadow-lg shadow-pink-600/20'}>
-              Join Community
+              Join Community!
             </Button>
           </div>
 

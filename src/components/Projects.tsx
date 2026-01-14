@@ -1,6 +1,5 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, School, Heart, Code } from 'lucide-react';
+import { Code, Heart, School, Sparkles } from 'lucide-react';
 export function Projects() {
   const projects = [{
     icon: Sparkles,
@@ -54,7 +53,7 @@ export function Projects() {
             </motion.div>
 
             <div className="space-y-6">
-              {projects.map((project, index) => <motion.div key={project.title} initial={{
+{projects.map((project, index) => <motion.div key={project.title} initial={{
               opacity: 0,
               x: -20
             }} whileInView={{
@@ -66,23 +65,15 @@ export function Projects() {
               duration: 0.5,
               delay: index * 0.1
             }} className="group cursor-pointer p-6 rounded-xl border border-slate-200 hover:border-pink-200 bg-white hover:shadow-lg hover:shadow-pink-100/50 transition-all duration-300">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-pink-500 to-purple-500 flex items-center justify-center text-white shadow-lg shadow-pink-500/20 group-hover:shadow-pink-500/40 transition-shadow duration-300 flex-shrink-0">
-                      <project.icon size={24} />
+<div className="flex-1">
+                    <div className="mb-2">
+                      <h3 className="text-xl font-bold text-slate-900 group-hover:text-pink-600 transition-colors">
+                        {project.title}
+                      </h3>
                     </div>
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-2">
-                        <h3 className="text-xl font-bold text-slate-900 group-hover:text-pink-600 transition-colors">
-                          {project.title}
-                        </h3>
-                        <span className="text-xs font-medium text-pink-600 bg-pink-50 px-2 py-1 rounded-full">
-                          {project.category}
-                        </span>
-                      </div>
-                      <p className="text-slate-600 leading-relaxed text-sm">
-                        {project.description}
-                      </p>
-                    </div>
+                    <p className="text-slate-600 leading-relaxed text-sm">
+                      {project.description}
+                    </p>
                   </div>
                 </motion.div>)}
             </div>
