@@ -68,7 +68,7 @@ export function About() {
 
         {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {features.map((feature, index) => <motion.div key={feature.title} initial={{
+{features.map((feature, index) => <motion.div key={feature.title} initial={{
           opacity: 0,
           y: 20
         }} whileInView={{
@@ -79,7 +79,7 @@ export function About() {
         }} transition={{
           duration: 0.5,
           delay: index * 0.1
-        }} className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl hover:shadow-pink-100/50 transition-all duration-300 border border-slate-100">
+        }} className="group">
               <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-500 to-purple-500 flex items-center justify-center text-white shadow-lg shadow-pink-500/20 group-hover:shadow-pink-500/40 transition-shadow duration-300 mb-6">
                 <feature.icon size={28} />
               </div>
@@ -99,6 +99,7 @@ export function About() {
                 </svg>
               </a>
             </motion.div>)}
+
         </div>
       </div>
     </section>;
