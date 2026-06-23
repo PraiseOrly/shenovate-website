@@ -34,26 +34,26 @@ export function Header() {
       ease: [0.16, 1, 0.3, 1]
     }}>
         <motion.div className={`
-            relative flex items-center justify-between px-6 md:px-8 transition-all duration-500
-            w-full md:max-w-[1260px] bg-white/90 backdrop-blur-xl py-2 rounded-lg
+            relative flex items-center justify-between px-5 md:px-6 transition-all duration-500
+            w-full md:max-w-[1260px] bg-white shadow-sm py-2.5 rounded-xl
           `} layout>
           {/* Logo */}
-          <a href="#" className="flex items-center gap-3 group">
-            <img src="/shenovate png_1.png" alt="Shenovate Logo" className="w-12 h-12 object-contain" />
+          <a href="#" className="flex items-center gap-2 group">
+            <img src="/shenovate png_1.png" alt="Shenovate Logo" className="w-11 h-11 object-contain" />
           </a>
 
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-1">
-            {navLinks.map(link => <a key={link.name} href={link.href} className="relative px-4 py-2 text-[16px] font-[700] text-slate-600 hover:text-slate-900 transition-colors group overflow-hidden font-['Instrument_Sans']" style={{ fontStyle: 'normal', lineHeight: '100%', letterSpacing: '-6%' }}>
+          {/* Desktop Nav - absolutely centered */}
+          <nav className="hidden md:flex items-center gap-2 absolute left-1/2 -translate-x-1/2">
+            {navLinks.map(link => <a key={link.name} href={link.href} className="relative px-4 py-2 text-[15px] font-semibold text-slate-700 hover:text-slate-900 transition-colors rounded-lg group overflow-hidden font-['Instrument_Sans']" style={{ fontStyle: 'normal', lineHeight: '100%', letterSpacing: '-0.02em' }}>
                 <span className="relative z-10">{link.name}</span>
-                <motion.div className="absolute inset-0 bg-slate-100 opacity-0 group-hover:opacity-100 -z-0" layoutId="navbar-hover" transition={{
+                <motion.div className="absolute inset-0 bg-slate-100 opacity-0 group-hover:opacity-100 -z-0 rounded-lg" transition={{
               duration: 0.2
             }} />
               </a>)}
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center">
             <Button size="sm" variant="primary" className="shadow-none rounded-full px-5">
               Join Our Community!
             </Button>
