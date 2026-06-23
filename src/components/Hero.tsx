@@ -12,14 +12,14 @@ const slides = [
       "We're a bold non-profit straight out of Nigeria, smashing the gender gap in tech one fearless girl at a time. From ages 9 to 35, we're empowering young women to own Science, Technology, Engineering, and Math (STEM) like never before."
   },
   {
-    image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=2000&q=80',
+    image: '/projects/project2.png',
     label: 'Empowering Women',
     title: 'Empowering the next generation of women in STEM',
     description:
       'Through mentorship, hands-on training, and community, we equip girls with the skills and confidence to lead in science and technology.'
   },
   {
-    image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=2000&q=80',
+    image: '/projects/project3.png',
     label: 'Rewriting Female Stories',
     title: 'Rewriting female stories, one girl at a time',
     description:

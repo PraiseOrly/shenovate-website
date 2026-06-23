@@ -23,13 +23,12 @@ export function Header() {
     href: '#contact'
   }];
   return <>
-      <motion.header className="fixed z-50 left-0 right-0 flex justify-center transition-all duration-500 ease-out" initial={{
+      <motion.header className="absolute z-50 top-6 left-0 right-0 flex justify-center" initial={{
       y: -100,
       opacity: 0
     }} animate={{
       y: 0,
-      opacity: 1,
-      top: '1.5rem'
+      opacity: 1
     }} transition={{
       duration: 0.8,
       ease: [0.16, 1, 0.3, 1]

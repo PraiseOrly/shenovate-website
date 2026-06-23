@@ -9,7 +9,7 @@ import { Community } from './components/Community';
 import { Testimonials } from './components/Testimonials';
 import { Footer } from './components/Footer';
 export function App() {
-  return <div className="min-h-screen bg-white font-sans text-slate-900 selection:bg-pink-100 selection:text-pink-900">
+  return <div className="relative min-h-screen bg-white font-sans text-slate-900 selection:bg-pink-100 selection:text-pink-900">
       <Header />
       <main>
         <Hero />
