@@ -40,8 +40,8 @@ export function Footer() {
           </div>
 
           {/* Right Side - Newsletter */}
-          <div className="lg:col-span-6 flex flex-col justify-end">
-            <div className="max-w-md">
+          <div className="lg:col-span-6 flex flex-col">
+            <div className="max-w-md ml-auto w-full">
               <h3 className="font-semibold mb-2">Stay up to date</h3>
               <form className="flex gap-2 mb-2" onSubmit={e => e.preventDefault()}>
                 <Input placeholder="Enter your email" className="bg-gray-100 border-gray-300 focus:ring-pink-500" />

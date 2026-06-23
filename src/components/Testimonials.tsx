@@ -1,55 +1,90 @@
 import { motion } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Star } from 'lucide-react';
+import { useState } from 'react';
 
 export function Testimonials() {
-  const testimonials = [{
-    quote: 'Shenovate empowered me to break through barriers in the tech industry, providing invaluable mentorship and resources that fueled my passion for coding and artificial intelligence.',
-    author: 'Joy Julius',
-    role: 'Student, Nigeria',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80'
-  }];
-  return <section className="py-20 md:py-32 bg-slate-50">
+  const testimonials = [
+    {
+      quote:
+        'Shenovate empowered me to break through barriers in the tech industry, providing invaluable mentorship and resources that fueled my passion for coding and artificial intelligence.',
+      author: 'Joy Julius',
+      role: 'Student, Nigeria'
+    },
+    {
+      quote:
+        'The mentorship I found here turned my curiosity into real skills. I built my first robot and now I dream in code — Shenovate made that possible.',
+      author: 'Amara Okeke',
+      role: 'Student, Nigeria'
+    }
+  ];
+
+  const [current, setCurrent] = useState(0);
+  const item = testimonials[current];
+
+  const prev = () => setCurrent(c => (c - 1 + testimonials.length) % testimonials.length);
+  const next = () => setCurrent(c => (c + 1) % testimonials.length);
+
+  return (
+    <section className="py-20 md:py-28 bg-[#fafafa]">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-4xl">
-          {testimonials.map((item, index) => <motion.div key={item.author} initial={{
-          opacity: 0,
-          y: 20
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} viewport={{
-          once: true
-        }} transition={{
-          duration: 0.5,
-          delay: index * 0.1
-        }} className="mb-16">
-              <div className="flex mb-8">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-8 w-8 text-yellow-400 fill-current mr-1" />
-                ))}
-              </div>
-              <p className="text-2xl md:text-3xl text-slate-800 mb-10 leading-relaxed font-medium">
-                "{item.quote}"
-              </p>
-              <div className="flex items-center gap-4">
-                <img src={item.image} alt={item.author} className="w-16 h-16 rounded-full object-cover ring-4 ring-pink-100" />
+          <motion.div
+            key={current}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            {/* Stars */}
+            <div className="flex mb-6">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="h-5 w-5 text-yellow-400 fill-current mr-1" />
+              ))}
+            </div>
+
+            {/* Quote */}
+            <p
+              className="text-slate-900 mb-10"
+              style={{
+                fontFamily: 'Instrument Serif',
+                fontWeight: 400,
+                fontSize: 'clamp(28px, 3.4vw, 44px)',
+                lineHeight: '128%',
+                letterSpacing: '-0.02em'
+              }}
+            >
+              {item.quote}
+            </p>
+
+            {/* Author + arrows */}
+            <div className="flex items-center gap-10">
+              <div className="flex items-center gap-3">
+                <div className="w-11 h-11 rounded-full bg-[#e8ddca]" />
                 <div>
-                  <div className="font-bold text-slate-900 text-lg">{item.author}</div>
-                  <div className="text-slate-600">{item.role}</div>
+                  <div className="font-semibold text-slate-900 text-sm">{item.author}</div>
+                  <div className="text-slate-500 text-xs">{item.role}</div>
                 </div>
               </div>
-            </motion.div>)}
-        </div>
 
-        <div className="flex justify-center items-center gap-4">
-          <button className="p-3 rounded-full bg-slate-100 hover:bg-slate-200 transition-colors">
-            <ChevronLeft className="h-6 w-6 text-slate-600" />
-          </button>
-          <button className="p-3 rounded-full bg-slate-100 hover:bg-slate-200 transition-colors">
-            <ChevronRight className="h-6 w-6 text-slate-600" />
-          </button>
+              <div className="flex items-center gap-6">
+                <button
+                  onClick={prev}
+                  aria-label="Previous testimonial"
+                  className="text-slate-400 hover:text-slate-700 transition-colors"
+                >
+                  <ArrowLeft className="h-5 w-5" />
+                </button>
+                <button
+                  onClick={next}
+                  aria-label="Next testimonial"
+                  className="text-slate-400 hover:text-slate-700 transition-colors"
+                >
+                  <ArrowRight className="h-5 w-5" />
+                </button>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 }
-
