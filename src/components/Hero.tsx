@@ -1,113 +1,167 @@
-import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronsRight, ArrowRight, Mouse } from 'lucide-react';
+import { useEffect, useState } from 'react';
 import { Button } from './ui/Button';
+
+const slides = [
+  {
+    image: '/bridging.jpg',
+    label: 'Bridging the Gap',
+    title: 'We are bridging the Gender Gap in Technology!',
+    description:
+      "We're a bold non-profit straight out of Nigeria, smashing the gender gap in tech one fearless girl at a time. From ages 9 to 35, we're empowering young women to own Science, Technology, Engineering, and Math (STEM) like never before."
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=2000&q=80',
+    label: 'Empowering Women',
+    title: 'Empowering the next generation of women in STEM',
+    description:
+      'Through mentorship, hands-on training, and community, we equip girls with the skills and confidence to lead in science and technology.'
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=2000&q=80',
+    label: 'Rewriting Female Stories',
+    title: 'Rewriting female stories, one girl at a time',
+    description:
+      'Join a movement that believes every girl deserves a seat at the table — and the tools to build it herself.'
+  }
+];
+
 export function Hero() {
-  return <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-slate-950">
-      {/* Animated Background Layers */}
-      <motion.div initial={{
-        opacity: 0
-      }} animate={{
-        opacity: 1
-      }} transition={{
-        duration: 1.5,
-        ease: 'easeInOut'
-      }} className="absolute inset-0 bg-black" />
+  const [current, setCurrent] = useState(0);
 
-      {/* Grain Texture */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay" style={{
-      backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E\")"
-    }} />
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent(prev => (prev + 1) % slides.length);
+    }, 7000);
+    return () => clearInterval(timer);
+  }, []);
 
-      {/* Elegant Ambient Glows */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div initial={{
-        opacity: 0,
-        scale: 0.8
-      }} animate={{
-        opacity: 1,
-        scale: 1,
-        x: [0, 50, 0],
-        y: [0, 30, 0]
-      }} transition={{
-        duration: 20,
-        repeat: Infinity,
-        ease: 'easeInOut'
-      }} className="absolute top-[-10%] right-[-5%] w-[800px] h-[800px] rounded-full bg-white/5 blur-[120px] mix-blend-screen" />
-        <motion.div initial={{
-        opacity: 0,
-        scale: 0.8
-      }} animate={{
-        opacity: 1,
-        scale: 1,
-        x: [0, -30, 0],
-        y: [0, -50, 0]
-      }} transition={{
-        duration: 25,
-        repeat: Infinity,
-        ease: 'easeInOut',
-        delay: 1
-      }} className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] rounded-full bg-white/5 blur-[100px] mix-blend-screen" />
-      </div>
+  const slide = slides[current];
 
+  return (
+    <section className="relative w-full max-w-[1728px] h-[1024px] mx-auto flex items-center overflow-hidden bg-slate-950">
+      {/* Background image carousel */}
+      <AnimatePresence mode="sync">
+        <motion.div
+          key={current}
+          initial={{ opacity: 0, scale: 1.08 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ opacity: { duration: 1.2 }, scale: { duration: 8, ease: 'easeOut' } }}
+          className="absolute inset-0"
+        >
+          <img src={slide.image} alt="" className="w-full h-full object-cover" />
+        </motion.div>
+      </AnimatePresence>
+
+      {/* Dark overlay for legibility */}
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-950/70 via-slate-950/55 to-slate-950/80" />
+      <div className="absolute inset-0 bg-black/20" />
+
+      {/* Hero content */}
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="max-w-5xl mx-auto text-center">
-            <motion.div initial={{
-              opacity: 0,
-              y: 20
-            }} animate={{
-              opacity: 1,
-              y: 0
-            }} transition={{
-              duration: 0.8,
-              ease: 'easeOut'
-            }} className="flex flex-col items-center">
-              {/* Refined Decorative Line */}
-              <motion.div className="w-px h-24 bg-gradient-to-b from-transparent via-slate-500 to-transparent mb-8" initial={{
-              height: 0,
-              opacity: 0
-            }} animate={{
-              height: 96,
-              opacity: 1
-            }} transition={{
-              duration: 1,
-              delay: 0.2
-            }} />
+        <div className="max-w-2xl mx-auto text-center">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={current}
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -24 }}
+              transition={{ duration: 0.7, ease: 'easeOut' }}
+              className="flex flex-col items-center"
+            >
+              <h1
+                className="mb-5 text-white"
+                style={{
+                  fontFamily: 'Instrument Serif',
+                  fontWeight: 400,
+                  fontStyle: 'normal',
+                  fontSize: '88px',
+                  lineHeight: '112%',
+                  letterSpacing: '-0.04em',
+                  textAlign: 'center'
+                }}
+              >
+                {slide.title}
+              </h1>
 
-              <motion.h1 className="mb-8 leading-[1.12]" style={{
-                fontFamily: 'Instrument Serif',
-                fontWeight: 400,
-                fontStyle: 'normal',
-                fontSize: '88px',
-                lineHeight: '112%',
-                letterSpacing: '-4%',
-                textAlign: 'center'
-              }}>
-               
-                <span className="block text-white">
-                  We are bridging the Gender Gap in Technology!
-                </span>
-              </motion.h1>
+              <p
+                className="text-white/80 mb-8 max-w-xl mx-auto"
+                style={{
+                  fontFamily: 'Instrument Sans',
+                  fontWeight: 500,
+                  fontStyle: 'normal',
+                  fontSize: '20px',
+                  lineHeight: '150%',
+                  letterSpacing: '-0.06em',
+                  textAlign: 'center'
+                }}
+              >
+                {slide.description}
+              </p>
 
-              <motion.p className="text-lg md:text-xl text-white mb-12 max-w-2xl mx-auto leading-relaxed font-light tracking-wide">
-                We're a bold non-profit straight out of Nigeria, smashing the gender gap in tech one fearless girl at a time. From ages 9 to 35, we're empowering young women to own Science, Technology, Engineering, and Math (STEM) like never before.
-              </motion.p>
-
-              <motion.div className="flex flex-col sm:flex-row items-center justify-center gap-6" initial={{
-              opacity: 0,
-              y: 20
-            }} animate={{
-              opacity: 1,
-              y: 0
-            }} transition={{
-              delay: 0.4
-            }}>
-                <Button variant="primary" size="lg" className="w-full sm:w-auto min-w-[200px] shadow-2xl shadow-pink-600/20 group">
-                  Begin Your Journey
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                </Button>
-              </motion.div>
+              <Button
+                variant="primary"
+                size="md"
+                className="rounded-full px-6 text-sm shadow-2xl shadow-pink-600/30 group"
+              >
+                Get Started
+                <ChevronsRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </Button>
             </motion.div>
+          </AnimatePresence>
         </div>
       </div>
-    </section>;
+
+      {/* Carousel dots */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex items-center gap-3">
+        {slides.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            aria-label={`Go to slide ${i + 1}`}
+            className={`h-3 w-3 rounded-full border border-white/70 transition-all duration-300 ${
+              i === current ? 'bg-white scale-110' : 'bg-transparent hover:bg-white/40'
+            }`}
+          />
+        ))}
+      </div>
+
+      {/* Scroll to explore */}
+      <div className="hidden md:flex absolute bottom-10 left-8 z-20 items-center gap-2 text-white/80 text-xs tracking-[0.2em] uppercase">
+        <Mouse className="h-4 w-4" />
+        <span>Scroll to Explore</span>
+      </div>
+
+      {/* Slide name card */}
+      <motion.div
+        initial={{ opacity: 0, x: 30 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.5, duration: 0.7 }}
+        className="hidden md:flex absolute bottom-10 right-8 z-20 items-start gap-3"
+      >
+        {/* Thumbnail with number overlay */}
+        <div className="relative h-12 w-16 rounded-md overflow-hidden border border-white/30 shrink-0">
+          <img src={slide.image} alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+            <span
+              className="text-white text-xl leading-none"
+              style={{ fontFamily: 'Instrument Serif' }}
+            >
+              {String(current + 1).padStart(2, '0')}
+            </span>
+          </div>
+        </div>
+
+        {/* Text + arrow */}
+        <div className="flex flex-col">
+          <span className="text-white text-sm font-light leading-tight max-w-[120px]">
+            {slide.label}
+          </span>
+          <ArrowRight className="mt-2 h-4 w-12 text-white/80" strokeWidth={1} />
+        </div>
+      </motion.div>
+    </section>
+  );
 }

@@ -1,22 +1,14 @@
 import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Button } from './ui/Button';
 export function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const {
     scrollY
   } = useScroll();
   // Parallax/Movement effects for the header content
   const headerY = useTransform(scrollY, [0, 100], [0, -10]);
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
   const navLinks = [{
     name: 'Home',
     href: '#'
@@ -24,7 +16,7 @@ export function Header() {
     name: 'About Us',
     href: '#about'
   }, {
-    name: 'Projects',
+    name: 'Project',
     href: '#projects'
   }, {
     name: 'Contact',
@@ -37,24 +29,23 @@ export function Header() {
     }} animate={{
       y: 0,
       opacity: 1,
-      top: isScrolled ? '1.5rem' : '0rem'
+      top: '1.5rem'
     }} transition={{
       duration: 0.8,
       ease: [0.16, 1, 0.3, 1]
     }}>
         <motion.div className={`
             relative flex items-center justify-between px-6 md:px-8 transition-all duration-500
-${isScrolled ? 'w-[45%] md:w-full md:max-w-[1260px] bg-white/90 backdrop-blur-xl py-2 rounded-lg' : 'w-full bg-transparent py-4'}
+            w-full md:max-w-[1260px] bg-white/90 backdrop-blur-xl py-2 rounded-lg
           `} layout>
           {/* Logo */}
           <a href="#" className="flex items-center gap-3 group">
-<img src="/shenovate png_1.png" alt="Shenovate Logo" className="w-16 h-16 object-contain" />
-            
+            <img src="/shenovate png_1.png" alt="Shenovate Logo" className="w-12 h-12 object-contain" />
           </a>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-1">
-{navLinks.map(link => <a key={link.name} href={link.href} className="relative px-4 py-2 text-[16px] font-[700] text-slate-600 hover:text-slate-900 transition-colors group overflow-hidden font-['Instrument_Sans']" style={{ fontStyle: 'normal', lineHeight: '100%', letterSpacing: '-6%' }}>
+            {navLinks.map(link => <a key={link.name} href={link.href} className="relative px-4 py-2 text-[16px] font-[700] text-slate-600 hover:text-slate-900 transition-colors group overflow-hidden font-['Instrument_Sans']" style={{ fontStyle: 'normal', lineHeight: '100%', letterSpacing: '-6%' }}>
                 <span className="relative z-10">{link.name}</span>
                 <motion.div className="absolute inset-0 bg-slate-100 opacity-0 group-hover:opacity-100 -z-0" layoutId="navbar-hover" transition={{
               duration: 0.2
@@ -64,8 +55,8 @@ ${isScrolled ? 'w-[45%] md:w-full md:max-w-[1260px] bg-white/90 backdrop-blur-xl
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-4">
-            <Button size="sm" variant="primary" className={isScrolled ? 'shadow-none' : 'shadow-lg shadow-pink-600/20'}>
-              Join Community!
+            <Button size="sm" variant="primary" className="shadow-none rounded-full px-5">
+              Join Our Community!
             </Button>
           </div>
 

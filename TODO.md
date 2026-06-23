@@ -1,20 +1,12 @@
-# Community.tsx Update Plan
+# TODO - Header.tsx White Header Format
 
-## Steps to Complete:
+## Task
+Remove the animated state change and maintain the white header format when scrolled and unscrolled throughout.
 
-- [x] Read current Community.tsx file
-- [x] Read Input component for reference
-- [x] Confirm plan with user
-- [x] Implement updated Community.tsx with registration form
-- [x] Test/verify the implementation
+## Steps
+- [x] 1. Edit Header.tsx - Apply white header styling permanently (remove conditional styling based on isScrolled)
+- [x] 2. Edit Header.tsx - Simplify the animate prop to remove scroll-based position changes
 
-## Form Fields to Include:
-1. First name (required, with placeholder)
-2. Last name (required, with placeholder)
-3. Email (required, with placeholder "you@gmail.com")
-4. Phone number with NG country code (+234)
-5. Why are you joining us (textarea, required)
-6. Privacy policy checkbox
-7. "Save my login details" checkbox
-8. Submit button "Request to Join"
+## Status
+Completed
 
