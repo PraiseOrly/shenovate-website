@@ -26,6 +26,52 @@ export function About() {
   return (
     <section id="about" className="py-20 md:py-28 bg-[#faf7fb]">
       <div className="container mx-auto px-4 md:px-6">
+        {/* Intro Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start mb-24"
+        >
+          <div>
+            <span className="inline-block text-sm font-medium text-violet-700 bg-violet-100 px-5 py-2 rounded-full mb-6">
+              Hey ! It's nice to meet you...
+            </span>
+            <h2
+              className="text-slate-900"
+              style={{
+                fontFamily: 'Instrument Serif',
+                fontWeight: 400,
+                fontSize: 'clamp(28px, 3.6vw, 46px)',
+                lineHeight: '112%',
+                letterSpacing: '-0.02em'
+              }}
+            >
+              Shenovate's Mission Is to Bridge the Gender Gap in Tech Across
+              Africa!
+            </h2>
+          </div>
+          <div className="lg:pt-4">
+            <p
+              className="text-slate-500"
+              style={{
+                fontFamily: 'Instrument Sans',
+                fontWeight: 500,
+                fontSize: '15px',
+                lineHeight: '170%',
+                letterSpacing: '-0.02em'
+              }}
+            >
+              We're a fierce non-profit from Nigeria, empowering girls and young
+              women aged 9–35 to rule STEM. Through coding, robotics, and
+              confidence-boosting workshops, we're sparking innovation and
+              building a future where every girl can lead, create, and stay in
+              tech!
+            </p>
+          </div>
+        </motion.div>
+
         {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
