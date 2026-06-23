@@ -80,7 +80,7 @@ export function About() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-12"
         >
-          <span className="inline-block text-xs font-medium text-slate-500 bg-slate-100 px-4 py-1.5 rounded-full mb-6">
+          <span className="inline-block text-xs font-medium text-violet-700 bg-violet-100 px-4 py-1.5 rounded-full mb-6">
             About Us
           </span>
           <h2
@@ -143,7 +143,7 @@ export function About() {
             >
               <Sparkle className="w-5 h-5 text-slate-400 mb-5" />
 
-              <span className="inline-block text-xs font-medium text-slate-500 bg-slate-100 px-4 py-1.5 rounded-full mb-4">
+              <span className="inline-block text-xs font-medium text-violet-700 bg-violet-100 px-4 py-1.5 rounded-full mb-4">
                 {feature.label}
               </span>
 

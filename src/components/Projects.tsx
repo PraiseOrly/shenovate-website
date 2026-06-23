@@ -41,7 +41,7 @@ export function Projects() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <span className="inline-block text-xs font-medium text-pink-600 bg-pink-50 px-4 py-1.5 rounded-full mb-6">
+          <span className="inline-block text-xs font-medium text-violet-700 bg-violet-100 px-4 py-1.5 rounded-full mb-6">
             Our Projects
           </span>
           <h2
