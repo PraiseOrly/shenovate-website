@@ -7,6 +7,7 @@ import { Partners } from './components/Partners';
 import { Projects } from './components/Projects';
 import { Impact } from './components/Impact';
 import { Community } from './components/Community';
+import { Team } from './components/Team';
 import { Testimonials } from './components/Testimonials';
 import { Footer } from './components/Footer';
 export function App() {
@@ -20,6 +21,7 @@ export function App() {
         <Projects />
         <Impact />
         <Community />
+        <Team />
         <Testimonials />
       </main>
       <Footer />
