@@ -125,22 +125,27 @@ export function Projects() {
             className="flex gap-3 h-[300px] sm:h-[420px] lg:h-[460px]"
           >
             {/* Main image */}
-            <div className="flex-[2.2] rounded-2xl overflow-hidden shadow-lg">
+            <div className="relative flex-[2.2] rounded-[18px] overflow-hidden border border-white/40 shadow-lg">
               <img
                 src={mainImage}
                 alt="Shenovate project highlight"
                 className="w-full h-full object-cover"
               />
+              <div className="absolute inset-0 bg-gradient-to-b from-purple-900/10 via-purple-800/20 to-purple-950/40 mix-blend-multiply" />
             </div>
 
             {/* Vertical strips */}
             {stripImages.map((src, i) => (
-              <div key={src} className="flex-[0.55] rounded-2xl overflow-hidden shadow-lg">
+              <div
+                key={src}
+                className="relative flex-[0.55] rounded-[18px] overflow-hidden border border-white/40 shadow-lg"
+              >
                 <img
                   src={src}
                   alt={`Project gallery ${i + 2}`}
                   className="w-full h-full object-cover"
                 />
+                <div className="absolute inset-0 bg-gradient-to-b from-purple-900/10 via-purple-800/20 to-purple-950/40 mix-blend-multiply" />
               </div>
             ))}
           </motion.div>
