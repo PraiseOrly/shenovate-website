@@ -2,6 +2,7 @@ import React from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
+import { Values } from './components/Values';
 import { Partners } from './components/Partners';
 import { Projects } from './components/Projects';
 import { Impact } from './components/Impact';
@@ -14,6 +15,7 @@ export function App() {
       <main>
         <Hero />
         <About />
+        <Values />
         <Partners />
         <Projects />
         <Impact />
